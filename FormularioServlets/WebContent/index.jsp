@@ -4,17 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Formulario Cadastro</title>
+<title>Cadastro Clientes</title>
 </head>
 <body align="center">
 	
 	
-	<h2>Cadastro:</h2>
+	<h2>Cadastro clientes:</h2>
 
 	<form action="#" method="Post">
 		<p><b>Nome</b>
-			<input type="text" name="nome" placeholder="Nome">
-			<input type="text" name="sobrenome" placeholder="Sobrenome">
+			<input type="text" name="nome" placeholder="Nome Completo">
 		</p><br>
 	
 		<p><b>CPF</b>
