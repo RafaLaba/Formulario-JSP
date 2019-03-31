@@ -36,10 +36,7 @@
 			</tr>
 			<tr>
 				<td>Endereco:</td>
-				Cidade:<td><input type="text" name="Cidade"/></td>
-				UF:<td><input type="text" name="UF"/></td>
-				Bairro<td><input type="text" name="bairro"/></td>
-				Numero<td><input type="text" name="numero"/></td>
+				<td><input type="text" name="endereco"/></td>
 			</tr>
 			<tr>
 				<td></td>
