@@ -6,35 +6,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Formulario Cadastro</title>
 </head>
-<body aling="center">
-<h2>Cadastro:</h2>
+<body align="center">
+	
+	
+	<h2>Cadastro:</h2>
 
 	<form action="#" method="Post">
-		<p>Nome
+		<p><b>Nome</b>
 			<input type="text" name="nome" placeholder="Nome">
 			<input type="text" name="sobrenome" placeholder="Sobrenome">
-		</p>
+		</p><br>
 	
-		<p>CPF
-			<input type="number" name="cpf" placeholder="CPF">
-		</p>
+		<p><b>CPF</b>
+			<input type="text" name="cpf" placeholder="000.000.000-00">
+		</p><br>
 	
-		<p>Endereço:<br>
-			Cidade: <input type="text" name="cidade" placeholder="Cidade"><br>
+		<p><b>Endereço:</b></b><br><br>
+			Cidade: <input type="text" name="cidade" placeholder="Cidade"><br><br>
 			UF: 	<select name="UF">
 				  <option value="PR">Paraná</option> 
 				  <option value="SC" selected>Santa Catarina</option>
 				  <option value="RS">Rio Grande do Sul</option>
 				</select>
-			<br>
-			Bairro: <input type="text" name="bairro" placeholder="Bairro"><br>
-			Rua: <input type="text" name="rua" placeholder="Rua"><br>
-			Número: <input type="number" min="0" max="9999" name="numcasa" placeholder="Número da Residencia"><br>
-		</p>
+			<br><br>
+			Bairro: <input type="text" name="bairro" placeholder="Bairro"><br><br>
+			Rua: <input type="text" name="rua" placeholder="Rua"><br><br>
+			Número: <input type="number" min="0" max="9999" name="numcasa" placeholder="000"><br><br>
+		</p><br>
 		
 		<p>
-			CEP: <input type="text" name="cep" placeholder="0"><br>
-		</p>
+			<b>CEP:</b> <input type="text" name="cep" placeholder="00000-000"><br>
+		</p><br>
 	
 		<input type="Submit" value="Enviar">
 		<input type="Reset" value="Apagar">
