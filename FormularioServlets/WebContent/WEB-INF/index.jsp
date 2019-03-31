@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cálculo de área de um Retângulo</title>
+<title>Formulario Cadastro</title>
 </head>
 <body>
-<h2>Cálculo de área de um Retângulo</h2>
+<h2>Cadastro:</h2>
 
 	<form action="#" method="Post">
 		<p>Nome
