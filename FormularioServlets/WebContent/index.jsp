@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Formulario Cadastro</title>
 </head>
-<body>
+<body aling="center">
 <h2>Cadastro:</h2>
 
 	<form action="#" method="Post">
@@ -19,7 +19,7 @@
 			<input type="number" name="cpf" placeholder="CPF">
 		</p>
 	
-		<p>Endereço:
+		<p>Endereço:<br>
 			Cidade: <input type="text" name="cidade" placeholder="Cidade"><br>
 			UF: 	<select name="UF">
 				  <option value="PR">Paraná</option> 
