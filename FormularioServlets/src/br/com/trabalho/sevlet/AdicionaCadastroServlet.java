@@ -14,6 +14,7 @@ import br.com.trabalho.bean.CadastroDAO;
 
 public class AdicionaCadastroServlet {
 	@WebServlet(name="AdicionaCadastroServlet", urlPatterns={"/adicionarCadastro"})
+	
 	public class AdicionaCadastroServlet extends HttpServlet{
 
 		private static final long serialVersionUID = 1L;
