@@ -7,7 +7,7 @@ public class CadastroDAO {
 	private static List<Cadastro> clientes = new ArrayList<Cadastro>();
 	
 	//MÃ©todo para salvar um objeto na lista "contatos"
-	public void salvar(Cadastro cadastro) {
+	public static void salvar(Cadastro cadastro) {
 		clientes.add(cadastro);
 	}
 	

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.trabalho.bean.Cadastro;
 import br.com.trabalho.bean.CadastroDAO;
 
-public class AdicionaCadastroServlet {
+
 	@WebServlet(name="AdicionaCadastroServlet", urlPatterns={"/adicionarCadastro"})
 	
 	public class AdicionaCadastroServlet extends HttpServlet{
@@ -36,8 +36,8 @@ public class AdicionaCadastroServlet {
 			CadastroDAO cadastroDAO = new CadastroDAO();
 			CadastroDAO.salvar(cadastro);
 			
-			
-			out.println("<!DOCTYPE html>");
+			out.println("<%@ page language=\'java\' contentType=\'text/html; charset=UTF-8\' pageEncoding=\'UTF-8\'%>");
+			out.println("<!DOCTYPE html PUBLIC \'-//W3C//DTD HTML 4.01 Transitional//EN\' \'http://www.w3.org/TR/html4/loose.dtd\'>");
 			out.println("<html>");
 			out.println("<head>");
 			out.println("<title>Adicionar contatos</title>");
@@ -52,4 +52,3 @@ public class AdicionaCadastroServlet {
 			
 		}
 	}
-}
