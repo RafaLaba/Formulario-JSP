@@ -27,12 +27,14 @@ import br.com.trabalho.bean.CadastroDAO;
 			//Captura os dados que vieram do form e coloca nas variÃ¡veis
 			String nome = req.getParameter("nome");
 			String cpf = req.getParameter("cpf");
+			String cep = req.getParameter("cep");
 			
 			
 			//Instanciar as classes dos Beans
 			Cadastro cadastro = new Cadastro();
 			cadastro.setNome(nome);
-			cadastro.setCPF(cpf);			
+			cadastro.setCPF(cpf);
+			cadastro.setCPF(cep);
 			CadastroDAO cadastroDAO = new CadastroDAO();
 			CadastroDAO.salvar(cadastro);
 			
@@ -43,11 +45,12 @@ import br.com.trabalho.bean.CadastroDAO;
 			out.println("<head>");
 			out.println("<title>Adicionar contatos</title>");
 			out.println("</head>");
-			out.println("<body>");
-			out.println("<p>Contato adicionado: " + nome + "</p>");
-			out.println("<p>CPF adicionado: " + cpf + "</p>");
+			out.println("<body align='center'>");
+			out.println("<p>Contato adicionado: <b>" + nome + "</b></p>");
+			out.println("<p>CPF adicionado: <b>" + cpf + "</b></p>");
+			out.println("<p>CEP adicionado: <b>" + cep + "</b></p>");
 			out.println("<br>");
-			out.println("<a href='index.jsp'>Voltar</a>");
+			out.println("<a href='index.jsp'><input type='button' value='voltar'></a>");
 			out.println("</body>");
 			out.println("</html>");
 			

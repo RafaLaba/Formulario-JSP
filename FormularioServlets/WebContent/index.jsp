@@ -19,22 +19,9 @@
 			<input type="text" name="cpf" placeholder="000.000.000-00">
 		</p><br>
 	
-<!-- 		<p><b>Endereço:</b></b><br><br> -->
-<!-- 			Cidade: <input type="text" name="cidade" placeholder="Cidade"><br><br> -->
-<!-- 			UF: 	<select name="UF"> -->
-<!-- 				  <option value="PR">Paraná</option>  -->
-<!-- 				  <option value="SC" selected>Santa Catarina</option> -->
-<!-- 				  <option value="RS">Rio Grande do Sul</option> -->
-<!-- 				</select> -->
-<!-- 			<br><br> -->
-<!-- 			Bairro: <input type="text" name="bairro" placeholder="Bairro"><br><br> -->
-<!-- 			Rua: <input type="text" name="rua" placeholder="Rua"><br><br> -->
-<!-- 			Número: <input type="number" min="0" max="9999" name="numcasa" placeholder="000"><br><br> -->
-<!-- 		</p><br> -->
-		
-<!-- 		<p> -->
-<!-- 			<b>CEP:</b> <input type="text" name="cep" placeholder="00000-000"><br> -->
-<!-- 		</p><br> -->
+ 		<p><b>CEP:</b>
+ 			<input type="text" name="cep" placeholder="00000-000"><br> 
+ 		</p><br>
 	
 		<input type="Submit" value="Enviar">
 		<input type="Reset" value="Apagar">

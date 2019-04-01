@@ -31,15 +31,16 @@ public class ListaCadastroServlet extends HttpServlet{
 		out.println("<head>");
 		out.println("<title>Listar Clientes</title>");
 		out.println("</head>");
-		out.println("<body>");
+		out.println("<body align='center'>");
 		out.println("<h2>Listagem de Clientes</h2><ul>");
 		for(Cadastro contato : lista) {
-			out.println("<li>Nome: " + contato.getNome() + "</li>");
-			out.println("<li>CPF: " + contato.getCPF() + "</li>");
+			out.println("<li>Nome: <b>" + contato.getNome() + "</b></li>");
+			out.println("<li>CPF: <b>" + contato.getCPF() + "</b></li>");
+			out.println("<li>CPF: <b>" + contato.getCEP() + "</b></li>");
 			out.println("---------------------------------------------");
 		}
 		out.println("</ul><br>");
-		out.println("<a href='index.jsp'>Voltar</a>");
+		out.println("<a href='index.jsp'><input type='button' value='voltar'></a>");
 		out.println("</body>");
 		out.println("</html>");
 		

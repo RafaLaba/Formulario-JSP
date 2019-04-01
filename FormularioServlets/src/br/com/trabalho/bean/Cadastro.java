@@ -3,7 +3,7 @@ package br.com.trabalho.bean;
 public class Cadastro {
 	private String nome;
 	private String CPF;
-	//private String cidade;
+	private String CEP;
 	
 	public String getNome() {
 		return nome;
@@ -17,13 +17,13 @@ public class Cadastro {
 	public void setCPF(String CPF) {
 		this.CPF = CPF;
 	}
-	/*public String getCidade() {
-		return cidade;
+	public String getCEP() {
+		return CEP;
 	}
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+	public void setCEP(String CEP) {
+		this.CEP = CEP;
 	}
-	*/
+	
 	
 }
 
