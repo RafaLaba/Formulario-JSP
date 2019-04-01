@@ -19,9 +19,5 @@ public class DBconection {
 		} catch(SQLException e) {
 			System.out.println("Ocorreu um erro ao criar a conexÃ£o: Erro: " + e.getMessage());
 		}
-
 	}
-
-	
-	
 }
