@@ -26,7 +26,7 @@ import br.com.trabalho.bean.CadastroDAO;
 			
 			//Captura os dados que vieram do form e coloca nas variÃ¡veis
 			String nome = req.getParameter("nome");
-			String cpf = req.getParameter("CPF");
+			String cpf = req.getParameter("cpf");
 			
 			
 			//Instanciar as classes dos Beans
@@ -36,8 +36,9 @@ import br.com.trabalho.bean.CadastroDAO;
 			CadastroDAO cadastroDAO = new CadastroDAO();
 			CadastroDAO.salvar(cadastro);
 			
-			out.println("<%@ page language=\'java\' contentType=\'text/html; charset=UTF-8\' pageEncoding=\'UTF-8\'%>");
-			out.println("<!DOCTYPE html PUBLIC \'-//W3C//DTD HTML 4.01 Transitional//EN\' \'http://www.w3.org/TR/html4/loose.dtd\'>");
+//			out.println("<%@ page language=\'java\' contentType=\'text/html; charset=UTF-8\' pageEncoding=\'UTF-8\'%>");
+//			out.println("<!DOCTYPE html PUBLIC \'-//W3C//DTD HTML 4.01 Transitional//EN\' \'http://www.w3.org/TR/html4/loose.dtd\'>");
+			out.println("<!DOCTYPE html>");
 			out.println("<html>");
 			out.println("<head>");
 			out.println("<title>Adicionar contatos</title>");
