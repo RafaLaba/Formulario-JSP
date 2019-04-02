@@ -10,7 +10,7 @@ public class DBconection {
 		Connection conexao = null;
 		try {
 			//Registro da classe JDBC e os parametros de conexÃ£o do banco
-			String url = "jdbc:mysql://localhost/DBclientes";
+			String url = "jdbc:mysql://localhost/dbclientes";
 			String usuario = "root";
 			String senha = "";
 			conexao = DriverManager.getConnection(url,usuario,senha);
