@@ -1,5 +1,5 @@
 package br.com.trabalho.crudJDBC;
-import java.sql.Date;
+
 
 public class Cadastro {
 	private Integer	id;

@@ -1,7 +1,6 @@
 package br.com.trabalho.crudJDBC;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,15 +11,35 @@ import java.util.List;
 
 
 public class CadastroCrudJDBC {
+
+	public void criarTabCadastros() throws SQLException {
+		Connection conn = geraConexao();
+		 Statement stmt = null;
+		 stmt = conn.createStatement();
+	      
+	      String sql = "CREATE TABLE `DBclientes`.`cadastros` ("+
+	    		 " `ID` INT NOT NULL AUTO_INCREMENT,"+
+	    		  "`nome` VARCHAR(45) NULL,"+
+	    		  "`CPF` VARCHAR(17) NULL,"+
+	    		 " `CEP` VARCHAR(15) NULL,"+
+	    		  "PRIMARY KEY (`ID`));";
+
+
+	      stmt.executeUpdate(sql);
+	      System.out.println("Tabela cadastros criada no banco de dados...");
+	}
+	
+
 	public void salvar(Cadastro cadastro) {
 		Connection conexao = this.geraConexao();
 		PreparedStatement insereSt = null;
-		String sql = "insert into cadastros (nome, CPF, CEP) values (?, ?, ?, ?, ?)";
+		String sql = "insert into cadastros (nome, CPF, CEP) values (?, ?, ?)";
 		try {
 			insereSt = conexao.prepareStatement(sql);
 			insereSt.setString(1, cadastro.getNome());
 			insereSt.setString(2, cadastro.getCPF());
 			insereSt.setString(3, cadastro.getCEP());
+//			insereSt.setInt(1, cadastro.getID());
 			insereSt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Erro ao incluir cadastro. Mensagem: "
@@ -42,7 +61,7 @@ public class CadastroCrudJDBC {
 		PreparedStatement atualizaSt = null;
 
 		// Aqui não atualizamos o campo data de cadastro
-		String sql = "update cadastros set nome=?, CPF=?, CEP=?";
+		String sql = "update cadastros set nome=?, CPF=?, CEP=?, where ID=?";
 
 		try {
 			atualizaSt = conexao.prepareStatement(sql);
@@ -68,7 +87,7 @@ public class CadastroCrudJDBC {
 		Connection conexao = this.geraConexao();
 		PreparedStatement excluiSt = null;
 
-		String sql = "delete from cadastro where codigo = ?";
+		String sql = "delete from cadastro where ID = ?";
 
 		try {
 			excluiSt = conexao.prepareStatement(sql);
@@ -108,7 +127,7 @@ public class CadastroCrudJDBC {
 				Cadastros.add(cliente);
 			}
 		} catch (SQLException e) {
-			System.out.println("Erro ao buscar código do cadastro. Mensagem: "
+			System.out.println("Erro ao buscar ID do cadastro. Mensagem: "
 					+ e.getMessage());
 		} finally {
 			try {
@@ -145,7 +164,7 @@ public class CadastroCrudJDBC {
 				cliente.setCEP(resultado.getString("CEP"));
 			}
 		} catch (SQLException e) {
-			System.out.println("Erro ao buscar código do cadastro. Mensagem: "
+			System.out.println("Erro ao buscar ID do cadastro. Mensagem: "
 					+ e.getMessage());
 		} finally {
 			try {
@@ -181,34 +200,32 @@ public class CadastroCrudJDBC {
 		return conexao;
 	}
 
-//	public static void main(String[] args) {
-//		
-//		cadastroCrudJDBC cadastroCRUDJDBC = new cadastroCrudJDBC();
-//
-//		// Criando um primeiro cadastro
-//		cadastro beltrano = new cadastro();
-//		beltrano.setNome("Beltrano Solar");
-//		beltrano.setTelefone("(47) 5555-3333");
-//		beltrano.setEmail("beltrano@teste.com.br");
-//		beltrano.setDataCadastro(new Date(System.currentTimeMillis()));
-//		beltrano.setObservacao("Novo cliente");
-//		cadastroCRUDJDBC.salvar(beltrano);
-//
-//		// Criando um segundo cadastro
-//		cadastro fulano = new cadastro();
-//		fulano.setNome("Fulano Lunar");
-//		fulano.setTelefone("(47) 7777-2222");
-//		fulano.setEmail("fulano@teste.com.br");
-//		fulano.setDataCadastro(new Date(System.currentTimeMillis()));
-//		fulano.setObservacao("Novo cadastro é possível cliente");
-//		cadastroCRUDJDBC.salvar(fulano);
-//		System.out.println("cadastros cadastrados: " + cadastroCRUDJDBC.listar().size());
-//		
-//		List<cadastro> lista = cadastroCRUDJDBC.listar();
-//		for(cadastro cadastro : lista) {
-//			System.out.println(cadastro.getNome());
-//		}
-//	}
+	public static void main(String[] args) throws SQLException{
+		
+		CadastroCrudJDBC cadastroCRUDJDBC = new CadastroCrudJDBC();
+		
+		cadastroCRUDJDBC.criarTabCadastros();
+
+		// Criando um primeiro cadastro
+		Cadastro beltrano = new Cadastro();
+		beltrano.setNome("Beltrano Solar");
+		beltrano.setCPF("000.000.000-00");
+		beltrano.setCEP("89000-000");
+		cadastroCRUDJDBC.salvar(beltrano);
+
+		// Criando um segundo cadastro
+		Cadastro fulano = new Cadastro();
+		fulano.setNome("Fulano Lunar");
+		fulano.setCPF("111.111.111-11");
+		fulano.setCEP("89111-111");
+		cadastroCRUDJDBC.salvar(fulano);
+		System.out.println("clientes cadastrados: " + cadastroCRUDJDBC.listar().size());
+		
+		List<Cadastro> lista = cadastroCRUDJDBC.listar();
+		for(Cadastro cadastro : lista) {
+			System.out.println(cadastro.getNome());
+		}
+	}
 	
 
 }
